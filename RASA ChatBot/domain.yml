@@ -1,0 +1,100 @@
+actions:
+- action_location_check
+- action_search_restaurants
+- action_send_email
+- action_verify_budget
+- action_verify_cuisine
+- utter_ask_budget
+- utter_ask_cuisine
+- utter_ask_email
+- utter_ask_location
+- utter_first_bye
+- utter_get_emailID
+- utter_goodbye
+- utter_greet
+- utter_iamabot
+- utter_no_service
+entities:
+- budget
+- cuisine
+- email
+- location
+intents:
+- restaurant_search
+- deny
+- greet
+- affirm
+- giving_email
+- iamabot
+- goodbye
+responses:
+  utter_ask_budget:
+  - buttons:
+    - payload: Lesser than Rs.300
+      title: Lesser than Rs.300
+    - payload: Rs. 300 to 700
+      title: Rs. 300 to 700
+    - payload: More than Rs. 700
+      title: More than Rs. 700
+    text: What price range are you looking at?
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Mexican
+      title: Mexican
+    - payload: Italian
+      title: Italian
+    - payload: American
+      title: American
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    text: What kind of cuisine would you prefer?
+  utter_ask_email:
+  - text: Should I send you details of all the restaurants on email?
+  - text: Hey! Do you want me to send the details of all the restaurants on email.
+  utter_ask_location:
+  - text: Sure In Which location?
+  - text: Sure In Which location you are looking?
+  utter_first_bye:
+  - text: Hey! you are not hungry?.. Ok Bye! Take Care
+  utter_get_emailID:
+  - text: Please give me your email address?
+  - text: To what email id should i send it to?
+  utter_goodbye:
+  - text: Bye Bye
+  - text: Bye! will see you soon
+  - text: Enjoy your meal :)
+  - text: Bye! Let me know when you feel hungry again :)
+  utter_greet:
+  - text: Hi! Tell me what can i do for you?
+  - text: HI! Feeling hungry? what can i do for you?
+  - text: Hey! How is it going. How May I help you Today?
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_no_service:
+  - text: Thanks!
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots:
+  budget:
+    type: text
+  cuisine:
+    type: text
+  email:
+    type: text
+  is_budget_valid:
+    type: bool
+  is_cuisine_valid:
+    type: bool
+  is_location_verified:
+    type: bool
+  is_mail_sent:
+    type: bool
+  is_restaurant_avail:
+    type: bool
+  location:
+    type: text
