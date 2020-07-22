@@ -7,7 +7,7 @@ class SendEmail:
 
     def send_Email(self,email,budget,less_3,t3_s7,more_7):
         server = smtplib.SMTP_SSL('smtp.gmail.com',465)
-        server.login('testprojectdummy@gmail.com','TestDummy@123')
+        server.login('something@gmail.com','<Passoword>')
         me = 'testprojectdummy@gmail.com'
         msg = EmailMessage()
         msg['Subject'] = 'Top Rated Restaurants in your area'
